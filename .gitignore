@@ -1,0 +1,4 @@
+node_modules
+cdk.out
+
+!canary/nodejs/node_modules
