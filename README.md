@@ -31,10 +31,10 @@ git init
 
 Then setup git to track the CodeCommit Repository created by CDK.
 ```
-RepoName=$(aws --profile alpha_us-west-2 cloudformation describe-stacks --stack-name CodePipelineStack --query "Stacks[0].Outputs[?OutputKey=='RepositoryName'].OutputValue" --output text)
+RepoName=$(aws cloudformation describe-stacks --stack-name CodePipelineStack --query "Stacks[0].Outputs[?OutputKey=='RepositoryName'].OutputValue" --output text)
 echo "${RepoName}"
 
-git remote add origin codecommit://alpha_us-west-2@${RepoName}
+git remote add origin codecommit://${RepoName}
 git checkout -b main
 ```
 

@@ -37,13 +37,13 @@ export class CodePipelineStack extends Stack {
 
     })
 
-    const alpha = new Deployment(this, 'Alpha', {
-      stageName: Stages.Alpha.name,
-      env: Stages.Alpha.serviceAccount,
-      canaryStackEnv: Stages.Alpha.canaryAccount,
-      apiUrl: Stages.Alpha.apiUrl,
+    const dev = new Deployment(this, 'Dev', {
+      stageName: Stages.Dev.name,
+      env: Stages.Dev.serviceAccount,
+      canaryStackEnv: Stages.Dev.canaryAccount,
+      apiUrl: Stages.Dev.apiUrl,
     })
-    pipeline.addStage(alpha, {
+    pipeline.addStage(dev, {
       pre: [
         new CodeBuildStep('Linting', {
           installCommands: [

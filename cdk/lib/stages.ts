@@ -8,8 +8,8 @@ interface Stage {
 }
 
 export const Stages: Record<string, Stage> = {
-  Alpha: {
-    name: 'Alpha',
+  Dev: {
+    name: 'Dev',
     serviceAccount: {
       account: '',
       region: 'us-west-2',

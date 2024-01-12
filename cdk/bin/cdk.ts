@@ -6,5 +6,5 @@ import { Stages } from '../lib/stages'
 
 const app = new cdk.App()
 new CodePipelineStack(app, 'CodePipelineStack', {
-  env: Stages.Alpha.serviceAccount,
+  env: Stages.Dev.serviceAccount,
 })
